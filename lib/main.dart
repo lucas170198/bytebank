@@ -5,9 +5,42 @@ void main() => runApp(BytebankApp());
 class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: ListaTransferencias()
-    );
+    return MaterialApp(home: FormularioTransferencia());
+  }
+}
+
+class FormularioTransferencia extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text('Criando Transferência')),
+        body: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                style: TextStyle(fontSize: 24.0),
+                decoration: InputDecoration(
+                    labelText: 'Número da conta', hintText: '0001'),
+                keyboardType: TextInputType.number,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                style: TextStyle(fontSize: 24.0),
+                  decoration: InputDecoration(
+                      icon: Icon(Icons.monetization_on),
+                      labelText: 'Valor',
+                      hintText: '100.0'),
+                  keyboardType: TextInputType.number
+              ),
+            ),
+            RaisedButton(
+              child: Text('Confirmar'),
+            ),
+          ],
+        ));
   }
 }
 
@@ -33,6 +66,7 @@ class ListaTransferencias extends StatelessWidget {
 
 class ItemTransferencia extends StatelessWidget {
   final Transferencia _transferencia;
+
   ItemTransferencia(this._transferencia);
 
   @override
