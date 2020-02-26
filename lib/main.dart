@@ -6,7 +6,17 @@ void main() => runApp(BytebankApp());
 class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: ListaTransferencias());
+    return MaterialApp(
+      home: ListaTransferencias(),
+      theme: ThemeData(
+        primaryColor: Colors.green[900],
+        accentColor: Colors.blueAccent[700],
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blueAccent[700],
+          textTheme: ButtonTextTheme.primary
+        ),
+      ),
+    );
   }
 }
 
@@ -17,7 +27,7 @@ class FormularioTransferencia extends StatefulWidget {
   }
 }
 
-class FormularioTransferenciaState extends State<FormularioTransferencia>{
+class FormularioTransferenciaState extends State<FormularioTransferencia> {
   final TextEditingController _controladorCampoValor = TextEditingController();
   final TextEditingController _controladorCampoNumero = TextEditingController();
 
@@ -25,7 +35,8 @@ class FormularioTransferenciaState extends State<FormularioTransferencia>{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('Criando Transferência')),
-        body: SingleChildScrollView(child: Column(
+        body: SingleChildScrollView(
+            child: Column(
           children: <Widget>[
             Editor(
               rotulo: 'Número da conta',
@@ -45,6 +56,7 @@ class FormularioTransferenciaState extends State<FormularioTransferencia>{
           ],
         )));
   }
+
   void _criaTransferencia(context) {
     final double valor = double.tryParse(_controladorCampoValor.text);
     final String numeroConta = _controladorCampoNumero.text;
@@ -53,7 +65,6 @@ class FormularioTransferenciaState extends State<FormularioTransferencia>{
       Navigator.pop(context, _transferecia);
     }
   }
-
 }
 
 class Editor extends StatelessWidget {
