@@ -8,14 +8,30 @@ class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ListaTransferencias(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Dashboard'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Image.asset('images/bytebank_logo.png'),
+            Container(
+              child: Column(
+                children: <Widget>[
+                  Icon(Icons.people),
+                  Text('Contatos'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       theme: ThemeData(
         primaryColor: Colors.green[900],
         accentColor: Colors.blueAccent[700],
         buttonTheme: ButtonThemeData(
-          buttonColor: Colors.blueAccent[700],
-          textTheme: ButtonTextTheme.primary
-        ),
+            buttonColor: Colors.blueAccent[700],
+            textTheme: ButtonTextTheme.primary),
       ),
     );
   }
