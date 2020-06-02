@@ -3,7 +3,7 @@ import 'package:bytebank/models/transferencia.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/transferencia.dart';
-import 'formuario.dart';
+import 'formulario.dart';
 
 const String _appBarText = 'Transferências';
 

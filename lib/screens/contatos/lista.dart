@@ -1,5 +1,6 @@
 import 'package:bytebank/components/app_lista.dart';
 import 'package:bytebank/models/contatos.dart';
+import 'package:bytebank/screens/contatos/formulario.dart';
 import 'package:flutter/material.dart';
 
 const String _appBarText = 'Contatos';
@@ -10,6 +11,7 @@ class ListaContatos extends StatelessWidget {
     return AppLista(
       appBarText: _appBarText,
       itemWidget: ItemContato(),
+      formularioWidget: FormularioContato(),
     );
   }
 }

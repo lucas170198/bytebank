@@ -1,4 +1,4 @@
-import 'package:bytebank/screens/transferencias/formuario.dart';
+import 'package:bytebank/screens/transferencias/formulario.dart';
 import 'package:flutter/material.dart';
 
 class AppLista<T> extends StatefulWidget {
